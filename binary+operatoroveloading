@@ -1,0 +1,39 @@
+#include<iostream>
+
+using namespace std;
+
+class test
+{
+    private:
+    int count;
+
+    public:
+
+    void input()
+    {
+        cout<<"Enter the value of count"<<endl;
+        cin>>count;
+    }
+
+    test operator +(test t)
+    {
+        test t1;// temporary object
+        t1.count = count +t.count;
+        return t1;
+    }
+
+    void display()
+    {
+        cout<<"The value of count is"<<count<<endl;
+    }
+
+};
+
+int main()
+{
+    test t1, t2, t3;
+    t1.input();
+    t2.input();
+    t3 = t1+t2; // t1.operator +(t2)
+    t3.display();
+}
